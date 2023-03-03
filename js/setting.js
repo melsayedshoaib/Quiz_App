@@ -17,9 +17,9 @@ export class Setting {
     })[0].value;
     let numberOfQuestions = this.numberOfQuestionsElement.value;
     if (numberOfQuestions === "") {
-      $("#alert1").fadeIn(500);
+      $("#alert1").fadeIn(500).fadeOut(500);
     } else if (numberOfQuestions == 0) {
-      $("#alert1").fadeIn(500);
+      $("#alert1").fadeIn(500).fadeOut(500);
     } else {
       let api = `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}`;
       let questions = await this.fetchApi(api);
